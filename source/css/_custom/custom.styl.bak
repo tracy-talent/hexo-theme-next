@@ -1,4 +1,21 @@
 // Custom styles.
+// 页面头部背景
+.header {  background:url(https://cdn.yangbingdong.com/img/header/header_background.jpg);}
+
+// 子标题
+.site-subtitle{ font-size: 15px; color: white; }
+
+// 标题
+.site-title {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+// 标题背景
+.brand{
+    background: transparent;
+}
+
 // 菜单栏
 .menu {
 	margin-top: 20px;
@@ -26,6 +43,26 @@ a:hover {
 }
 .menu .menu-item a:hover {
     border-bottom-color: #ff106c;
+}
+
+// 文章背景框框
+.post {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    padding: 18px;
+    -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, 0.8);
+   }
+
+// 站点描述
+.site-description {
+    font-size: 16px;
+
+}
+
+// 头部inner
+.header-inner {
+    padding: 45px 0 25px;
+    width: 700px;
 }
 
 // 作者名
@@ -66,6 +103,22 @@ code {
 // 文章标题动态效果 next/source/css/_common/components/post/post-title.styl中.posts-expand .post-title-link确保`position: relative;`属性存在, 如果需要标题呈现链接效果颜色, 将`color`元素去除即可
 .posts-expand .post-title-link::before {
     background-image: linear-gradient(90deg, #a166ab 0%, #ef4e7b 25%, #f37055 50%, #ef4e7b 75%, #a166ab 100%);
+}
+
+// 文章内标题样式（左边的竖线）
+.post-body h2, h3, h4, h5, h6 {
+    border-left: 4px solid #657b83;
+    padding-left: 10px;
+}
+
+.post-body h1 {
+    border-left: 5px solid #657b83;
+    padding-left: 10px;
+}
+
+body {
+    color: #444;
+    font-size: 16px;
 }
 
 // 下载样式
@@ -296,3 +349,13 @@ border-top-color: #9954bb;
     font-size: 14px;
     margin-top: 15px;
 }
+// 主页阴影效果
+/*
+.post {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 25px;
+  -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);
+  -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);
+ }
+*/

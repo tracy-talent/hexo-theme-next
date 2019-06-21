@@ -1,5 +1,6 @@
 {% macro render(post, is_index, post_extra_class) %}
 
+
   {% set headlessPost = Array.prototype.indexOf.call(['quote', 'picture'], post.type) > -1 %}
 
   {% set post_class = 'post post-type-' + post.type | default('normal') %}
@@ -15,6 +16,7 @@
   {### POST BLOCK ###}
   {##################}
   <div class="post-block">
+
     <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -202,7 +204,7 @@
           {# LeanCould PageView #}
           {% if theme.leancloud_visitors.enable %}
              <span id="{{ url_for(post.path) }}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
-               <span class="post-meta-divider">|</span>
+               <span class="post-meta-divider"><br/></span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
@@ -212,6 +214,25 @@
                  <span class="leancloud-visitors-count"></span>
              </span>
           {% endif %}
+
+          <span class="post-time">
+	        &nbsp; | &nbsp;
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">字数统计:</span>
+            <span class="post-count">{{ wordcount(post.content) }}(字)</span>
+            
+          </span>
+	  
+          <span class="post-time">
+	        &nbsp; | &nbsp;
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">阅读时长:</span>
+            <span class="post-count">{{ min2read(post.content) }}(分)</span>
+          </span>
 
           {% if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.page_pv %}
             <span class="post-meta-divider">|</span>
@@ -333,6 +354,9 @@
     {#####################}
     {### END POST BODY ###}
     {#####################}
+    
+    <!-- 文章结束分割线 -->
+    <div style="text-align:center;color: #ccc;font-size:14px;">---------------- The End ----------------</div>
 
     {% if theme.wechat_subscriber.enabled and not is_index %}
       <div>
@@ -351,12 +375,24 @@
         {% include 'post-copyright.swig' with { post: post } %}
       </div>
     {% endif %}
+    
+    <div>
+	    <p id="div-border-left-red">
+	    <span>
+        <b>作者: brooksjay</b><br/>
+        <b>联系邮箱: jaypark@smail.nju.edu.cn</b><br/>
+	    <b>本文地址: </b><a href="{{ url_for(page.path) }}" title="{{ page.title }}">{{ page.permalink }}</a><br/>
+	    <b>本文基于<a target="_blank" title="Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)" href="http://creativecommons.org/licenses/by-sa/4.0/"> 知识共享署名-相同方式共享 4.0 </a>国际许可协议发布</b><br/>
+        <b>转载请注明出处, 谢谢！</b>
+	    </span>
+	    </p>
+    </div>
 
     <footer class="post-footer">
       {% if post.tags and post.tags.length and not is_index %}
         <div class="post-tags">
           {% for tag in post.tags %}
-            <a href="{{ url_for(tag.path) }}" rel="tag"># {{ tag.name }}</a>
+            <a href="{{ url_for(tag.path) }}" rel="tag"><i class="fa fa-tag"></i> {{ tag.name }}</a>
           {% endfor %}
         </div>
       {% endif %}
