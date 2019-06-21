@@ -93,13 +93,13 @@ index_with_subtitle: false
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
   home: / || home
-  about: /about/ || user
-  tags: /tags/ || tags
-  categories: /categories/ || th
+  #about: /about/ || user
+  #tags: /tags/ || tags
+  #categories: /categories/ || th
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
-  commonweal: /404/ || heartbeat
+  #commonweal: /404/ || heartbeat
 
 # Enable/Disable menu icons.
 menu_icons:
@@ -128,7 +128,7 @@ scheme: Mist
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
   GitHub: https://github.com/tracy-talent || github
-  E-Mail: mailto:jaypark@smail.nju.edu.cn || envelope
+  E-Mail: mailto:tracy1talent@gmail.com || envelope
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
@@ -150,12 +150,13 @@ links_title: Links
 links_layout: block
 #links_layout: inline
 links:
-  博客旧址: http://www.cnblogs.com/brooksj
+  博客园: http://www.cnblogs.com/brooksj
+  Title: http://www.cnblogs.com/brooksj
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
-avatar: /images/avatar.jpg
+#avatar: /images/avatar.gif
 
 # Table Of Contents in the Sidebar
 toc:
@@ -278,7 +279,8 @@ custom_logo:
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
+highlight_theme: night eighties
+
 
 # ---------------------------------------------------------------
 # Font Settings
@@ -496,17 +498,17 @@ duoshuo_info:
 # Facebook SDK Support.
 # https://github.com/iissnan/hexo-theme-next/pull/410
 facebook_sdk:
-  enable:       true
-  app_id:       473188823418438
-  fb_admin:     100035055370515
-  like_button:  true
-  webmaster:    true
+  enable:       false
+  app_id:       #<app_id>
+  fb_admin:     #<user_id>
+  like_button:  #true
+  webmaster:    #true
 
 # Facebook comments plugin
 # This plugin depends on Facebook SDK.
 # If facebook_sdk.enable is false, Facebook comments plugin is unavailable.
 facebook_comments_plugin:
-  enable:       true
+  enable:       false
   num_of_posts: 10    # min posts num is 1
   width:        100%  # default width is 550px
   scheme:       light # default scheme is light (light or dark)
@@ -531,9 +533,9 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: true
-  app_id: AJCfamp9AdxK89MonULcgI68-gzGzoHsz
-  app_key: sVrhDpWMN5wNlfAPwgDHdxPL
+  enable: false
+  app_id: #<app_id>
+  app_key: #<app_key>
 
 # Another tool to show number of visitors to each article.
 # visit https://console.firebase.google.com/u/0/ to get apiKey and projectId
@@ -541,8 +543,8 @@ leancloud_visitors:
 firestore:
   enable: false
   collection: articles #required, a string collection name to access firestore database
-  apiKey: AIzaSyChIXTcNewc2XlnYzglkecffd02T3xUInA
-  projectId: mygoagent1-1310
+  apiKey: #required
+  projectId: #required
   bluebird: false #enable this if you want to include bluebird 3.5.1(core version) Promise polyfill
 
 # Show PV/UV of the website/page with busuanzi.
@@ -695,10 +697,10 @@ pace: false
 pace_theme: pace-theme-minimal
 
 # Canvas-nest
-canvas_nest: false
+canvas_nest: true
 
 # three_waves
-three_waves: false
+three_waves: true
 
 # canvas_lines
 canvas_lines: false
